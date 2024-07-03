@@ -7,7 +7,7 @@ using HomeWorkSolid.Interfaces;
 
 namespace HomeWorkSolid.Classes
 {
-    public class NumGenerator :INumberGenerator
+    public class RandomNumberGenerator :INumberGenerator
     {
         public int GenerateNumber(int minValue, int maxValue)
         {

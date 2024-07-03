@@ -1,6 +1,9 @@
 ﻿using HomeWorkSolid.Classes;
 using System;
 using System.Security.Cryptography;
+using HomeWorkSolid.Classes;
+using HomeWorkSolid.Interfaces;
+using RandomNumberGenerator = HomeWorkSolid.Classes.RandomNumberGenerator;
 
 class Program
 {
@@ -13,14 +16,12 @@ class Program
         while (true)
         {
             Console.Write("Enter your guess: ");
-            if (int.TryParse(Console.ReadLine(), out int guess) && gameLogic.TryGuessNumber(guess, out string message))
+            int.TryParse(Console.ReadLine(), out int guess);
+            var guessed = gameLogic.TryGuessNumber(guess, out string message);
+            Console.WriteLine(message);
+            if (guessed)
             {
-                Console.WriteLine(message);
                 break;
-            }
-            else 
-            {
-                Console.WriteLine(message);
             }
         }
     }

@@ -44,5 +44,5 @@ namespace HomeWorkSolid.Classes
         }
     }
 
-    
+
 }
