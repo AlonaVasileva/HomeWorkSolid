@@ -3,6 +3,7 @@ using System;
 using System.Security.Cryptography;
 using HomeWorkSolid.Classes;
 using HomeWorkSolid.Interfaces;
+using static System.Int32;
 using RandomNumberGenerator = HomeWorkSolid.Classes.RandomNumberGenerator;
 
 class Program
@@ -16,13 +17,21 @@ class Program
         while (true)
         {
             Console.Write("Enter your guess: ");
-            int.TryParse(Console.ReadLine(), out int guess);
-            var guessed = gameLogic.TryGuessNumber(guess, out string message);
-            Console.WriteLine(message);
-            if (guessed)
+            bool isNumber = TryParse(Console.ReadLine(), out int guess);
+            if (!isNumber)
             {
-                break;
+                Console.WriteLine("It is not number. Enter your guess:");
             }
+            else
+            {
+                var guessed = gameLogic.TryGuessNumber(guess, out string message);
+                Console.WriteLine(message);
+                if (guessed)
+                {
+                    break;
+                }
+            }
+           
         }
     }
 }

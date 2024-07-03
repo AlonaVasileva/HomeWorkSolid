@@ -11,7 +11,7 @@ namespace HomeWorkSolid.Classes
     {
         private readonly INumberGenerator _numberGenerator;
         private readonly IGameSettings _gameSettings;
-        private int _targetNumber;
+        private readonly int _targetNumber;
         private int _attemptsRemaining;
 
         public GameLogic(INumberGenerator numberGenerator, IGameSettings gameSettings)
